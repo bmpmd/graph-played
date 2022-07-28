@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'http://localhost:4200',
+  },
+  url: "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=5CC129C93C7719CE21BE8A8A5AD7A4BE&steamid=76561198103598619&include_played_free_games=true"
+
 };
 
 /*
