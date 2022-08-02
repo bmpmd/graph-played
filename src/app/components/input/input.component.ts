@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
 
@@ -13,10 +14,24 @@ export class InputComponent implements OnInit {
   //oninit, show in console response of serv 
   ngOnInit(): void {
     
-    this.gameService.getAllGames().subscribe(
-      (res)=>{console.log(res)},
-      (err)=>{console.log(err)}
-    );
+    fetch(environment.url, {
+      method: "GET",
+      mode:'cors',
+      headers: environment.headers
+    })
+    .then(
+      (response) => {
+        if(!response.ok){
+          console.log(response)
+        }
+        return response.json()
+      }
+
+    )
+    .then(
+      data => console.log(data)
+    )
+
   }
 
 

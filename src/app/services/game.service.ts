@@ -9,7 +9,13 @@ import { environment } from 'src/environments/environment';
 export class GameService {
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+    })
   }
 
   constructor(private http: HttpClient) { }
@@ -24,8 +30,8 @@ export class GameService {
     //maybe there's a service that will get the steam id in any way ... 
 
 
-    return this.http.get<any>(environment.url, {headers: environment.headers})
-    
+    return this.http.get<any>(environment.url, { headers: environment.headers })
+
   }
 
   private handleError(httpError: HttpErrorResponse) {
