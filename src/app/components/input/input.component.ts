@@ -12,7 +12,11 @@ export class InputComponent implements OnInit {
 
   //oninit, show in console response of serv 
   ngOnInit(): void {
-    console.log(this.gameService.getAllGames());
+    
+    this.gameService.getAllGames().subscribe(
+      (res)=>{console.log(res)},
+      (err)=>{console.log(err)}
+    );
   }
 
 

@@ -24,7 +24,7 @@ export class GameService {
     //maybe there's a service that will get the steam id in any way ... 
 
 
-    return this.http.get<any>(`${environment.url}`, this.httpOptions)
+    return this.http.get<any>(environment.url, {headers: environment.headers})
     
   }
 
