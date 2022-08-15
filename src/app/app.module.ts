@@ -7,15 +7,14 @@ import { InputComponent } from './components/input/input.component';
 import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { BotNavComponent } from './components/bot-nav/bot-nav.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
     HomeComponent,
-    NavbarComponent,
-    BotNavComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
