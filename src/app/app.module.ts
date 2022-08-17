@@ -7,6 +7,7 @@ import { InputComponent } from './components/input/input.component';
 import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { OutComponent } from './components/out/out.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppComponent,
     InputComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    OutComponent
   ],
   imports: [
     BrowserModule,

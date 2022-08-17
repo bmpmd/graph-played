@@ -1,3 +1,14 @@
-#text{
-    width: 40%;
+
+
+.input{
+    padding-left: 20%;
+    max-width: 75%;
 }
+
+#text{
+    position: relative;
+    left: 45px;
+    border-radius: 7px;
+    
+}
+
