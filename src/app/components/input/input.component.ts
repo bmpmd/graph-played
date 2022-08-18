@@ -1,3 +1,4 @@
+import { AppComponent } from './../../app.component';
 import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
@@ -13,10 +14,12 @@ export class InputComponent implements OnInit {
   });
   searchTerm: string = '';
   constructor(private gameService: GameService,
-    private formBuilder: FormBuilder) { }
-
+    private formBuilder: FormBuilder,
+    public appComponent: AppComponent) { }
+  
   onSubmit(): void {
-
+    this.appComponent.isLoading = true; 
+    this.appComponent.done = false; 
     console.log(`search: ${this.searchTerm}`)
     fetch(environment.url + `${this.searchTerm}`, {
       method: "GET",
@@ -35,7 +38,8 @@ export class InputComponent implements OnInit {
       .then(
         data => {
           
-          
+          this.appComponent.isLoading = false; 
+          this.appComponent.done = true; 
           console.log(data.games)
         }
       )

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'graph-played';
+  isLoading:boolean = false; 
+  done:boolean = false; 
 }
