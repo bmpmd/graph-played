@@ -8,7 +8,7 @@ export const environment = {
     'Content-Type': 'application/json; charset=UTF-8',
     'Access-Control-Allow-Origin': 'http://localhost:4200',
   },
-  url: "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=5CC129C93C7719CE21BE8A8A5AD7A4BE&steamid=76561198103598619&include_played_free_games=true"
+  url: "http://localhost:8080/user/"
 
 };
 

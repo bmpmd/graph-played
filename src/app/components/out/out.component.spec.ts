@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotNavComponent } from './bot-nav.component';
+import { OutComponent } from './out.component';
 
-describe('BotNavComponent', () => {
-  let component: BotNavComponent;
-  let fixture: ComponentFixture<BotNavComponent>;
+describe('OutComponent', () => {
+  let component: OutComponent;
+  let fixture: ComponentFixture<OutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BotNavComponent ]
+      declarations: [ OutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BotNavComponent);
+    fixture = TestBed.createComponent(OutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

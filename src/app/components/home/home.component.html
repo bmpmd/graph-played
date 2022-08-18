@@ -8,12 +8,29 @@
 </div>
 
 <div class="text-center input">
-    <app-input></app-input>
+    <div *ngIf="!appComponent.isLoading && !appComponent.done">
+        <app-input></app-input>
+        <!-- here is where the loading icons will be -->
+        <!-- aka the points of my app that will load on scroll -->
+        <div class="points mt-4">
+            <p>point 1 </p>
+            <p>point 2 </p>
+        </div>
+    </div>
+
+    <div *ngIf="appComponent.isLoading && !appComponent.done" class="spinner-border text-warning" role="status">
+        <span class="sr-only"></span>
+    </div>
+
+    <div *ngIf="!appComponent.isLoading && appComponent.done">
+        <app-out></app-out>
+    </div>
+
 </div>
 
 <div class="text-center botnav">
-    <app-bot-nav></app-bot-nav>
+    <footer>
+        <p>Website made by teeny. Support me :) </p>
+    </footer>
+
 </div>
-
-
-

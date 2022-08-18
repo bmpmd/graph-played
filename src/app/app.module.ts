@@ -7,7 +7,10 @@ import { InputComponent } from './components/input/input.component';
 import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { BotNavComponent } from './components/bot-nav/bot-nav.component'
+import { OutComponent } from './components/out/out.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { BotNavComponent } from './components/bot-nav/bot-nav.component'
     InputComponent,
     HomeComponent,
     NavbarComponent,
-    BotNavComponent
+    OutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
