@@ -1,3 +1,12 @@
 <div class="nav">
-    <p>Steam Data Visualizer</p>
+    <button class="btn btn-sm bg-transparent" (click)="onClick()">
+        <h4 *ngIf="!this.appComponent.done" style="color: #ffd60a;">
+           Steam Data Visualizer
+        </h4>
+        <h4 *ngIf="this.appComponent.done && !this.appComponent.isLoading" style="color: #ffd60a;">
+            Back
+         </h4>
+    
+      </button>
+   
 </div>

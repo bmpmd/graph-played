@@ -6,8 +6,10 @@
 
 .input{
     background-color: #003566;
-    height: 80em;
+    min-height: 80em;
+    max-height:fit-content;
     padding-top: 10em;
+    padding-bottom: 10em;
     
     
 }
