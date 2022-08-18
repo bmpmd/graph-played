@@ -11,6 +11,7 @@ import { OutComponent } from './components/out/out.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

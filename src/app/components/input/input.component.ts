@@ -41,6 +41,7 @@ export class InputComponent implements OnInit {
           this.appComponent.isLoading = false; 
           this.appComponent.done = true; 
           console.log(data.games)
+          this.appComponent.games = data.games;
         }
       )
   }

@@ -1,8 +1,10 @@
 <form [formGroup]="searchForm" class="input input-group" (ngSubmit)="onSubmit()">
-    <input [(ngModel)]="searchTerm" type="text" id="text" formControlName="query" class="form-control" placeholder="Enter Steam community ID here..." />
+    <input [(ngModel)]="searchTerm" type="text" id="text" formControlName="query" class="form-control"
+        placeholder="Enter Steam community ID here..." />
     <span class="input-group-append ">
-        <button type="button" class="btn" style="z-index: 100; color: black; border-color: #ffd60a; background-color: #ffd60a;"
-            routerLink="/output">go</button>
+        <button type="button" class="btn"
+            style="z-index: 100; color: black; border-color: #ffd60a; background-color: #ffd60a;"
+            (ngSubmit)="onSubmit()">go</button>
     </span>
 
 </form>

@@ -8,7 +8,7 @@
 </div>
 
 <div class="text-center input">
-    <div *ngIf="!appComponent.isLoading">
+    <div *ngIf="!appComponent.isLoading && !appComponent.done">
         <app-input></app-input>
         <!-- here is where the loading icons will be -->
         <!-- aka the points of my app that will load on scroll -->
@@ -18,12 +18,12 @@
         </div>
     </div>
 
-    <div *ngIf="appComponent.isLoading" class="spinner-border text-warning" role="status">
+    <div *ngIf="appComponent.isLoading && !appComponent.done" class="spinner-border text-warning" role="status">
         <span class="sr-only"></span>
     </div>
 
     <div *ngIf="!appComponent.isLoading && appComponent.done">
-        
+        <app-out></app-out>
     </div>
 
 </div>
