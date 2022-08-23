@@ -22,6 +22,15 @@ export class OutComponent implements OnInit {
   constructor(public appComponent: AppComponent) {
 
 
+    var models = appComponent.games.map(({name, playtime_forever})=>{
+      var hrsApi:number = playtime_forever / 60;
+      var hrs = parseFloat(hrsApi.toString()).toFixed(2);
+       
+      return {name, hrs};
+    });
+
+    console.log(models);
+
 
   }
 
