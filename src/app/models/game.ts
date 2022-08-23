@@ -1,30 +1,29 @@
 export class Game {
-    id: number;
+    appid: number;
     name: string;
-    playtimeAlltime: number;
-    imgUrl: string;
-    playtimeWindows: number;
+    playtime_forever: number;
+    //imgUrl: string;
+    playtime_windows_forever: number;
     playtimeMac: number;
-    playtimeLinux: number;
-    lastPlayed: number;
+    playtime_linux_forever: number;
+    rtime_last_played: number;
 
-    constructor(id: number,
+    constructor(appid: number,
         name: string,
-        playtimeAlltime: number,
-        imgUrl: string,
-        playtimeWindows: number,
+        playtime_forever: number,
+        playtime_windows_forever: number,
         playtimeMac: number,
-        playtimeLinux: number,
-        lastPlayed: number){
-    this.id = id;
-    this.name = name;
-    this.playtimeAlltime = playtimeAlltime;
-    this.imgUrl = `https://media.steampowered.com/steamcommunity/public/images/apps/${id}/header.jpg`;
-    this.playtimeWindows = playtimeWindows;
-    this.playtimeMac = playtimeMac;
-    this.playtimeLinux = playtimeLinux;
-    this.lastPlayed = lastPlayed;
+        playtime_linux_forever: number,
+        rtime_last_played: number) {
+        this.appid = appid;
+        this.name = name;
+        this.playtime_forever = playtime_forever;
+        //this.imgUrl = `https://steamcdn-a.akamaihd.net/steam/apps/240/header.jpg`;
+        this.playtime_windows_forever = playtime_windows_forever;
+        this.playtimeMac = playtimeMac;
+        this.playtime_linux_forever = playtime_linux_forever;
+        this.rtime_last_played = rtime_last_played;
 
 
-}
+    }
 }

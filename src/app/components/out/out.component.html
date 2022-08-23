@@ -1,4 +1,5 @@
 <!-- this is where the Big leagues are... -->
 <div *ngFor="let game of appComponent.games">
-    <li>{{game.name}}</li>
+    <img src='{{"https://steamcdn-a.akamaihd.net/steam/apps/"+ game.appid + "/header.jpg" }}' alt="">
+    <li>{{game.name}}: {{game.appid}}</li> 
 </div>
