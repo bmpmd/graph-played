@@ -1,8 +1,18 @@
 <!-- this is where the Big leagues are... -->
 
-<plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+<plotly-plot [data]="graph.data" [layout]="graph.layout"
+></plotly-plot>
+
+<table class="align-items-center text-center">
+    <tr>
+        <td>
+            <ngx-charts-pie-chart [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="true" [view]="[700, 370]"  [gradient]="gradient" [legend]="showLegend" [results]="getModels()"> </ngx-charts-pie-chart>
+        </td>
+    </tr>
+</table>
 <div *ngFor="let game of appComponent.games">
-    <img src='{{"https://steamcdn-a.akamaihd.net/steam/apps/"+ game.appid + "/header.jpg" }}' alt="">
+    <!--
+    <img src='{{"https://steamcdn-a.akamaihd.net/steam/apps/"+ game.appid + "/header.jpg" }}' alt=""> -->
     <li style="color: whitesmoke">{{game.name}}: {{game.playtime_forever}}</li>
 </div>
 
