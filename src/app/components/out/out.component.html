@@ -1,5 +1,8 @@
 <!-- this is where the Big leagues are... -->
+
+<plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
 <div *ngFor="let game of appComponent.games">
     <img src='{{"https://steamcdn-a.akamaihd.net/steam/apps/"+ game.appid + "/header.jpg" }}' alt="">
-    <li>{{game.name}}: {{game.appid}}</li> 
+    <li style="color: whitesmoke">{{game.name}}: {{game.playtime_forever}}</li>
 </div>
+
