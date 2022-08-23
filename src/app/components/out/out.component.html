@@ -1,12 +1,10 @@
 <!-- this is where the Big leagues are... -->
 
-<plotly-plot [data]="graph.data" [layout]="graph.layout"
-></plotly-plot>
 
 <table class="align-items-center text-center">
     <tr>
         <td>
-            <ngx-charts-pie-chart [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="true" [view]="[700, 370]"  [gradient]="gradient" [legend]="showLegend" [results]="getModels()"> </ngx-charts-pie-chart>
+            <ngx-charts-pie-chart [arcWidth]="0.5" [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="true" [view]="[1000, 500]"  [gradient]="gradient" [legend]="showLegend" [results]="getModels()"> </ngx-charts-pie-chart>
         </td>
     </tr>
 </table>

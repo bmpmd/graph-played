@@ -10,13 +10,7 @@ import { GraphModel } from 'src/app/models/graphmodel';
 
 
 export class OutComponent implements OnInit {
-  public graph = {
-    data: [
 
-      { x: [1, 2, 3], y: [2, 5, 3], type: 'bar' },
-    ],
-    layout: { width: 320, height: 240, title: 'A Fancy Plot' }
-  };
 
   //options for ngx graph 
   view: any[] = [700, 370];
@@ -36,22 +30,55 @@ export class OutComponent implements OnInit {
 
 
 
-  constructor(public appComponent: AppComponent) {}
+  constructor(public appComponent: AppComponent) { }
 
   ngOnInit(): void {
   }
 
   getModels(): any {
-
+    console.log("get models was")
+    var other: number = 0;
     var models = this.appComponent.games.map(({ name, playtime_forever }) => {
       var hrsApi: number = playtime_forever / 60;
-      var value = parseFloat(hrsApi.toString()).toFixed(2);
+      if (hrsApi < 30) {
+        other += hrsApi;
+        name = "Other"
+        var value = parseFloat(hrsApi.toString()).toFixed(2);
 
-      return { name, value };
+      }
+      else {
+        var value = parseFloat(hrsApi.toString()).toFixed(2);
+        return { name, value };
+      }
+
+
+      if (name !== "Other") {
+
+      }
+      else {
+        //console.log(`ignoring ${name} since it only has ${value} hrs.`)
+      }
+
+
+
     });
 
-    console.log(models);
-    return models;
+
+
+    console.log(`other hrs totla: ${other}`);
+    console.log("models below:::")
+    console.log(models)
+    const results = models.filter(element => {
+      return element !== undefined;
+    });
+
+    let otherGames =
+      { name: 'Other', value: other.toString() }
+
+    results.push(otherGames); 
+    console.log("after::: ")
+    console.log(results)
+    return results;
 
   }
 }
