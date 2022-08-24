@@ -68,7 +68,7 @@ export class OutComponent implements OnInit {
     });
 
     let otherGames =
-      { name: 'Other', value: other.toString() }
+      { name: 'Other', value: parseFloat(other.toString()).toFixed(2) }
 
     results.push(otherGames); 
     console.log("after::: ")

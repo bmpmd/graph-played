@@ -1,17 +1,19 @@
 <!-- this is where the Big leagues are... -->
-<h2>All Time Most Played</h2>
+<h2 style="color: whitesmoke">All Time Most Played</h2>
 <div class="output text-center align-items-center">
-    <table class="pie">
+    <table class="pie" style="color: whitesmoke">
         <tr>
             <td>
-                <ngx-charts-pie-chart  class="text-center align-items-center" [arcWidth]="0.4"  [labels]="showLabels"
-                     [legendTitle]="'Games Played'" [scheme]="colorScheme" [doughnut]="true"  [gradient]="gradient"
+                <ngx-charts-pie-chart class="text-center align-items-center" [arcWidth]="0.4" [labels]="showLabels"
+                    [legendTitle]="'Games Played'" [scheme]="colorScheme" [doughnut]="true" [gradient]="gradient"
                     [legend]="showLegend" [results]="res">
                 </ngx-charts-pie-chart>
             </td>
         </tr>
     </table>
 </div>
+
+
 
 <div *ngFor="let game of appComponent.games">
     <!--
