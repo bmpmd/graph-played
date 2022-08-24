@@ -3,6 +3,7 @@
 .input{
     padding-left: 20%;
     max-width: 75%;
+    height: 60px;
 }
 
 #text{
@@ -14,5 +15,9 @@
 
 .btn:hover{
     background-color: #ffd60a;
+}
+.btn{
+    height: 60px;
+    font-size: x-large;
 }
 

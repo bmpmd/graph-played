@@ -1,16 +1,20 @@
 <!-- this is where the Big leagues are... -->
+<h2>All Time Most Played</h2>
+<div class="output text-center align-items-center">
+    <table class="pie">
+        <tr>
+            <td>
+                <ngx-charts-pie-chart  class="text-center align-items-center" [arcWidth]="0.4"  [labels]="showLabels"
+                     [legendTitle]="'Games Played'" [scheme]="colorScheme" [doughnut]="true"  [gradient]="gradient"
+                    [legend]="showLegend" [results]="res">
+                </ngx-charts-pie-chart>
+            </td>
+        </tr>
+    </table>
+</div>
 
-
-<table class="align-items-center text-center">
-    <tr>
-        <td>
-            <ngx-charts-pie-chart [arcWidth]="0.5" [legendPosition]="legendPosition" [labels]="showLabels" [doughnut]="true" [view]="[1000, 500]"  [gradient]="gradient" [legend]="showLegend" [results]="getModels()"> </ngx-charts-pie-chart>
-        </td>
-    </tr>
-</table>
 <div *ngFor="let game of appComponent.games">
     <!--
     <img src='{{"https://steamcdn-a.akamaihd.net/steam/apps/"+ game.appid + "/header.jpg" }}' alt=""> -->
     <li style="color: whitesmoke">{{game.name}}: {{game.playtime_forever}}</li>
 </div>
-

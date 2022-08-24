@@ -8,6 +8,9 @@
 </div>
 
 <div class="text-center input">
+    <div *ngIf="!appComponent.isLoading && appComponent.done">
+        <app-out></app-out>
+    </div>
     <div *ngIf="!appComponent.isLoading && !appComponent.done">
         <app-input></app-input>
         <!-- here is where the loading icons will be -->
@@ -22,9 +25,7 @@
         <span class="sr-only"></span>
     </div>
 
-    <div *ngIf="!appComponent.isLoading && appComponent.done">
-        <app-out></app-out>
-    </div>
+
 
 </div>
 
