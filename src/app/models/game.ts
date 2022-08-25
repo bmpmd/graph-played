@@ -1,30 +1,37 @@
-export class Game {
-    id: number;
-    name: string;
-    playtimeAlltime: number;
-    imgUrl: string;
-    playtimeWindows: number;
+interface GameResponse{
+    appid: number; 
+    name: string; 
+    playtime_forever: number;
+    playtime_windows_forever: number;
     playtimeMac: number;
-    playtimeLinux: number;
-    lastPlayed: number;
-
-    constructor(id: number,
-        name: string,
-        playtimeAlltime: number,
-        imgUrl: string,
-        playtimeWindows: number,
-        playtimeMac: number,
-        playtimeLinux: number,
-        lastPlayed: number){
-    this.id = id;
-    this.name = name;
-    this.playtimeAlltime = playtimeAlltime;
-    this.imgUrl = `https://media.steampowered.com/steamcommunity/public/images/apps/${id}/header.jpg`;
-    this.playtimeWindows = playtimeWindows;
-    this.playtimeMac = playtimeMac;
-    this.playtimeLinux = playtimeLinux;
-    this.lastPlayed = lastPlayed;
-
-
+    playtime_linux_forever: number;
+    rtime_last_played: number;
 }
+
+export class Game {
+    appid: number;
+    name: string;
+    playtime_forever: number;
+    playtime_windows_forever: number;
+    playtimeMac: number;
+    playtime_linux_forever: number;
+    rtime_last_played: number;
+    
+
+    //additional props 
+    value: number;
+
+    constructor(rawResponse: GameResponse) {
+        this.appid = rawResponse.appid;
+        this.name = rawResponse.name;
+        this.playtime_forever = rawResponse.playtime_forever;
+        this.playtime_windows_forever = rawResponse.playtime_windows_forever;
+        this.playtimeMac = rawResponse.playtimeMac;
+        this.playtime_linux_forever = rawResponse.playtime_linux_forever;
+        this.rtime_last_played = rawResponse.rtime_last_played;
+
+        this.value = rawResponse.playtime_forever + rawResponse.playtime_windows_forever;
+        
+
+    }
 }
