@@ -1,13 +1,25 @@
 .output{
 
     text-align: center;
-    
+    color: whitesmoke;
+    margin-bottom: 3em;
 
 }
+
 
 .pie{
     margin: 0 auto;
    
-    width: 900px;
-    height: 600px;
+    width: 1000px;
+    height: 700px;
+}
+
+.chart{
+    fill: whitesmoke !important;
+    text-align: center;
+}
+
+ngx-charts-legend{
+    display: block !important;
+    left: 15em;
 }

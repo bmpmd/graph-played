@@ -24,6 +24,7 @@ export class OutComponent implements OnInit {
   gradient: boolean = false;
   isDoughnut: boolean = true;
 
+  topThree: any[] = [];
 
 
  
@@ -77,7 +78,7 @@ export class OutComponent implements OnInit {
 
 
     //get top 3 
-    var topThreeRes = this.getTopThree();
+    this.topThree = this.getTopThree();
 
 
   }
@@ -86,9 +87,14 @@ export class OutComponent implements OnInit {
   //on a user's profile 
   getTopThree():any{
 
+    
     var res = this.appComponent.games.sort(({playtime_forever:a}, {playtime_forever:b}) => b-a);
     console.log(`top three: ${res[0].name}, ${res[1].name}, ${res[2].name} `)
-    return res;
+    var list = [];
+    for(let i = 0; i < 3; i++){
+      list.push(`https://steamcdn-a.akamaihd.net/steam/apps/${this.appComponent.games[i].appid}/header.jpg`)
+    }
+    return list;
   }
   getModels(): any {
     console.log("get models was")
@@ -99,7 +105,7 @@ export class OutComponent implements OnInit {
       if (hrsApi < 5) {
         other += hrsApi;
         name = "Other"
-        var value = parseFloat(hrsApi.toString()).toFixed(2);
+        var value = parseFloat(hrsApi.toString()).toFixed(2)
 
       }
       else {
@@ -132,6 +138,23 @@ export class OutComponent implements OnInit {
     
     return results;
 
+  }
+
+  getTotalPlayed():any{
+    var sum = 0;
+    this.appComponent.games.forEach(game => {
+      sum += game.playtime_forever;
+    });
+    return sum.toLocaleString();
+  }
+
+  getTotalPlayedHours():any{
+    var sum = 0;
+    this.appComponent.games.forEach(game => {
+      sum += game.playtime_forever;
+    });
+    sum = sum / 60;
+    return sum.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})
   }
 }
 
