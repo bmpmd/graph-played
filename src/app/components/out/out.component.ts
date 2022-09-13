@@ -164,8 +164,10 @@ export class OutComponent implements OnInit {
     return sum.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})
   }
 
+  //gets the date profile was created
+  //and returns the amount of days since account creation, the avg hrs/day 
   getDate():void{
-    var date = new Date(this.appComponent.data[0].timecreated);
+    var date = new Date(this.appComponent.data[0].timecreated * 1000);
     console.log(`DATE: ${date}` )
 
   }
