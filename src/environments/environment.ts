@@ -8,7 +8,8 @@ export const environment = {
     'Content-Type': 'application/json; charset=UTF-8',
     'Access-Control-Allow-Origin': 'http://localhost:4200',
   },
-  url: "http://localhost:8080/user/"
+  url: "http://localhost:8080/user/", 
+  playerUrl: "http://localhost:8080/player/"
 
 };
 

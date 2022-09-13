@@ -16,11 +16,13 @@ export class InputComponent implements OnInit {
   constructor(private gameService: GameService,
     private formBuilder: FormBuilder,
     public appComponent: AppComponent) { }
-  
+
   onSubmit(): void {
-    this.appComponent.isLoading = true; 
-    this.appComponent.done = false; 
+    this.appComponent.isLoading = true;
+    this.appComponent.done = false;
     console.log(`search: ${this.searchTerm}`)
+
+    //fetches game information 
     fetch(environment.url + `${this.searchTerm}`, {
       method: "GET",
       mode: 'cors',
@@ -37,19 +39,48 @@ export class InputComponent implements OnInit {
       )
       .then(
         data => {
-          
-          this.appComponent.isLoading = false; 
-          this.appComponent.done = true; 
+
+          this.appComponent.isLoading = false;
+          this.appComponent.done = true;
           console.log(data.games)
           this.appComponent.games = data.games;
         }
       )
+
+
+
+
+    //fetching user information 
+    fetch(environment.playerUrl + `${this.searchTerm}`, {
+      method: "GET",
+      mode: 'cors',
+      headers: environment.headers
+    })
+      .then(
+        (response) => {
+          if (!response.ok) {
+            console.log(response)
+          }
+          return response.json()
+        }
+
+      )
+      .then(
+        data => {
+
+         
+          console.log("DATA FROM PROFILE: " + data)
+          console.log(data)
+          this.appComponent.data = data;
+        }
+      )
+
   }
 
   //oninit, show in console response of serv 
   ngOnInit(): void {
 
-    
+
 
   }
 

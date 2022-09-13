@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Game } from './models/game';
+import { PlayerData } from './models/playerdata';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,4 +11,5 @@ export class AppComponent {
   isLoading:boolean = false; 
   done:boolean = false; 
   games:Game[] = [];
+  data: PlayerData[]=[];
 }

@@ -25,7 +25,8 @@ export class OutComponent implements OnInit {
   isDoughnut: boolean = true;
 
   topThree: any[] = [];
-
+  avi: string="";
+  
 
  
 
@@ -36,9 +37,12 @@ export class OutComponent implements OnInit {
 
   ngOnInit(): void {
     //sets all the stuff right... 
-    console.log("get models was")
+    //console.log("get models was")
+    
     this.appComponent.games = this.appComponent.games.sort(({playtime_forever:a}, {playtime_forever:b}) => b-a);
     var other: number = 0;
+    
+    var avi = this.appComponent.data[0].avatarfull;
     var models = this.appComponent.games.map(({ name, playtime_forever }) => {
       var hrsApi: number = playtime_forever / 60;
       if (hrsApi < 5) {
@@ -80,6 +84,9 @@ export class OutComponent implements OnInit {
     //get top 3 
     this.topThree = this.getTopThree();
 
+
+    //date 
+    this.getDate();
 
   }
 
@@ -155,6 +162,12 @@ export class OutComponent implements OnInit {
     });
     sum = sum / 60;
     return sum.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})
+  }
+
+  getDate():void{
+    var date = new Date(this.appComponent.data[0].timecreated);
+    console.log(`DATE: ${date}` )
+
   }
 }
 

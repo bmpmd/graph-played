@@ -1,4 +1,10 @@
 <!-- this is where the Big leagues are... -->
+<div class="mb-2">
+    <h1>{{this.appComponent.data[0].personaname}}'s Stats</h1>
+<img src="{{this.appComponent.data[0].avatarfull}}" alt="">
+</div>
+
+
 <h2 class="output">All Time Most Played</h2>
 <div class="output text-center align-items-center">
     <table class="pie" style="color: whitesmoke">
@@ -13,7 +19,7 @@
     </table>
 </div>
 <div class="output">
-    <h3>In total, you played {{getTotalPlayed().toLocaleString()}} minutes across all games.</h3>
+    <h3>In total, you played {{getTotalPlayed().toLocaleString()}} minutes across all  {{this.appComponent.games.length}} of your games.</h3>
     <h5>That's {{getTotalPlayedHours()}} hours!</h5>
 </div>
 <div class="output">
